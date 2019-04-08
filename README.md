@@ -5,6 +5,8 @@ using Helm, in order to deploy a Spring Boot app.
 Using a single command, you create YAML files for your app: you just need
 to customize these descriptors to set your container image, and you're done.
 
+<img src="https://i.imgur.com/h4scTC9.gif"/>
+
 The generated descriptors support these features:
  - app deployment with healthchecks & replication
  - [Spring Cloud Kubernetes](https://spring.io/projects/spring-cloud-kubernetes) support
