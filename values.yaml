@@ -13,7 +13,7 @@ service:
   port: 80
 
 # Set to false to disable Prometheus support.
-monitoring: false
+monitoring: true
 
 # Set to false to disable Spring Cloud Kubernetes support.
 sck: true
