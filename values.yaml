@@ -1,0 +1,23 @@
+# Set how many application instances to run.
+replicaCount: 1
+
+# Override these settings and use your container image.
+image:
+  repository: alexandreroman/hello-sck
+  tag: latest
+  pullPolicy: IfNotPresent
+
+# Set service type: LoadBalancer, ClusterIP, NodePort
+service:
+  type: LoadBalancer
+  port: 80
+
+# Set to false to disable Prometheus support.
+monitoring: false
+
+# Set to false to disable Spring Cloud Kubernetes support.
+sck: true
+
+# Set configuration properties.
+config:
+  message: Hello Kubernetes!

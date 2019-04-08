@@ -1,0 +1,30 @@
+Thank you for installing {{ .Chart.Name }}.
+Your release is named {{ .Release.Name }}.
+
+Go to https://github.com/alexandreroman/hello-sck to find
+a sample app using Spring Cloud Kubernetes.
+
+To learn more about the release, try:
+
+  $ helm status {{ .Release.Name }}
+  $ helm get {{ .Release.Name }}
+
+Edit app configuration using this command:
+
+  $ kubectl -n {{ .Release.Namespace }} edit configmap {{ include "spring-boot.fullname" . }}
+
+To scale out this app (add/remove instances), try:
+
+  $ kubectl -n {{ .Release.Namespace }} scale --replicas 3 deployment {{ include "spring-boot.fullname" . }}
+
+{{- if eq .Values.service.type "LoadBalancer" }}
+
+Find public app endpoint here (see EXTERNAL-IP):
+
+  $ kubectl -n {{ .Release.Namespace }} get service {{ include "spring-boot.fullname" . }}
+
+{{- end }}
+
+Remove this release from your cluster using this command:
+
+  $ helm delete {{ .Release.Name }}
