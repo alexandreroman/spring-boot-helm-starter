@@ -1,8 +1,8 @@
 Thank you for installing {{ .Chart.Name }}.
 Your release is named {{ .Release.Name }}.
 
-Go to https://github.com/alexandreroman/hello-sck to find
-a sample app using Spring Cloud Kubernetes.
+Go to https://github.com/alexandreroman/k8s-with-no-dockerfile-no-yaml-files
+to find a sample app using Spring Cloud Kubernetes.
 
 To learn more about the release, try:
 

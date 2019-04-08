@@ -5,7 +5,7 @@ using Helm, in order to deploy a Spring Boot app.
 Using a single command, you create YAML files for your app: you just need
 to customize these descriptors to set your container image, and you're done.
 
-<img src="https://i.imgur.com/h4scTC9.gif"/>
+<img src="https://i.imgur.com/gZN0r7r.gif"/>
 
 The generated descriptors support these features:
  - app deployment with healthchecks & replication
@@ -35,7 +35,7 @@ image:
   repository: myrepo/myapp
 ```
 
-As you can see, you can set some properties in this file as well,
+As you can see, you can also set some properties in this file,
 such as `ConfigMap` entries.
 
 You are now ready to deploy your app using Helm:
