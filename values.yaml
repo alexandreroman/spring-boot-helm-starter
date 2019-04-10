@@ -3,7 +3,7 @@ replicaCount: 1
 
 # Override these settings and use your container image.
 image:
-  repository: alexandreroman/hello-sck
+  repository: alexandreroman/hello
   tag: latest
   pullPolicy: IfNotPresent
 
@@ -20,4 +20,4 @@ sck: true
 
 # Set configuration properties.
 config:
-  message: Hello Kubernetes!
+  foo: bar
