@@ -4,6 +4,7 @@ metadata:
   name: {{ include "spring-boot.fullname" . }}
 data:
   application.yml: |-
-    {{- range $key, $val := .Values.config }}
-    {{ $key }}: {{ $val | quote }}
-    {{- end }}
+    spring:
+      application:
+        name: {{ include "spring-boot.fullname" . }}
+    {{- toYaml .Values.config | nindent 4 }}
