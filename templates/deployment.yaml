@@ -25,6 +25,10 @@ spec:
         prometheus.io/port:  "8080"
       {{- end }}
     spec:
+      {{- if .Values.imageCredentials.registry }}
+      imagePullSecrets:
+        - name: {{ include "spring-boot.fullname" . }}-registry
+      {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
@@ -54,3 +58,13 @@ spec:
               path: /actuator/health
               port: http
             initialDelaySeconds: 20
+{{- if .Values.imageCredentials.registry }}
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: {{ include "spring-boot.fullname" . }}-registry
+type: kubernetes.io/dockerconfigjson
+data:
+  .dockerconfigjson: {{ template "imagePullSecret" . }}
+{{- end }}
